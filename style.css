@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+:root {
+  height: 100%;
+}
+
+:root {
+  --soft-red: hsl(10, 79%, 65%);
+  --cyan: hsl(186, 34%, 60%);
+  --dark-brown: hsl(25, 47%, 15%);
+  --medium-brown: hsl(28, 10%, 53%);
+  --cream: hsl(27, 66%, 92%);
+  --very-pale-orange: hsl(33, 100%, 98%);
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--cream);
+}
+
+.container {
+  width: 95%;
+  max-width: 550px;
+  margin: 2rem auto;
+}
+
+#balance {
+  background-color: var(--soft-red);
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#balance h2 {
+  font-size: 1rem;
+  color: var(--cream);
+  font-weight: 400;
+}
+
+#balance p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--very-pale-orange);
+  margin-top: 0.5rem;
+}
+
+.wrapper {
+  background-color: var(--very-pale-orange);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.wrapper > hr {
+  border-color: var(--cream);
+  border-width: 1.5px;
+  border-style: solid;
+  margin: 1.5rem 0;
+}
+
+#weekly-expenses h2 {
+  color: var(--dark-brown);
+  font-size: 1.5rem;
+}
+
+#chart {
+  height: 250px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+.bar {
+  margin-top: auto;
+  background-color: var(--soft-red);
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bar.max {
+  background-color: var(--cyan);
+}
+
+.bar:hover {
+  background-color: hsl(10, 79%, 75%);
+}
+
+.bar.max:hover {
+  background-color: hsl(186, 34%, 70%);
+}
+
+.bar-value {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  background-color: var(--dark-brown);
+  transition: all 0.2s ease;
+  font-size: 0.75rem;
+  color: var(--cream);
+  text-align: center;
+  padding: 4px 0;
+  border-radius: 4px;
+  opacity: 0;
+}
+
+.bar:hover > .bar-value {
+  opacity: 1;
+  transform: translateY(-120%);
+}
+
+.bar-label {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: var(--medium-brown);
+}
+
+#monthly-expenses {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+#monthly-expenses h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--medium-brown);
+  margin-bottom: 0.5rem;
+}
+
+#monthly-expenses article:first-child > p {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark-brown);
+}
+
+#monthly-expenses article:last-child > p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark-brown);
+  text-align: end;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
